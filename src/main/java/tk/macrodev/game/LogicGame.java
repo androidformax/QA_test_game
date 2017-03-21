@@ -5,8 +5,6 @@ import tk.macrodev.game.actions.AttackAction;
 import tk.macrodev.game.actions.DowngradeAction;
 import tk.macrodev.game.actions.UpgradeAction;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 import static tk.macrodev.game.actions.GenerateRandom.generateRandom;
@@ -32,8 +30,6 @@ public class LogicGame {
      *
      */
     public static void main(String[] args) {
-
-        double newRnd = generateRandom(1);
 
         Character magElf = new Character(Character.Type.GENERAL, 100);
         magElf.load(new AttackAction(10, Action.Type.MAGIC_ATTACK));
@@ -81,58 +77,44 @@ public class LogicGame {
         /**
          * Отряды
          */
-//        Character[] elfs = {magElf, archerElf, archerElf, archerElf,warriorElf,warriorElf,warriorElf,warriorElf};
-//        Character[] humans = {magHuman, archerHuman, archerHuman, archerHuman,warriorHuman,warriorHuman,warriorHuman,warriorHuman};
-//        Character[] orcs = {shamanOrc, archerOrc, archerOrc, archerOrc,goblinOrc,goblinOrc,goblinOrc,goblinOrc};
-//        Character[] undeads = {necromancerUndead, hunterUndead, hunterUndead, hunterUndead,zombieUndead,zombieUndead,zombieUndead,zombieUndead};
 
-        List<Character> elfs = new ArrayList<>();
-        elfs.add(magElf);
-        elfs.add(archerElf);
-        elfs.add(archerElf);
-        elfs.add(archerElf);
-        elfs.add(warriorElf);
-        elfs.add(warriorElf);
-        elfs.add(warriorElf);
-        elfs.add(warriorElf);
+        double newRndGood = generateRandom(1);
+        if (newRndGood == 0) {
+            Character[] elfs = {magElf, archerElf, archerElf, archerElf,warriorElf,warriorElf,warriorElf,warriorElf};
 
-        List<Character> humans = new ArrayList<>();
-        humans.add(magHuman);
-        humans.add(archerHuman);
-        humans.add(archerHuman);
-        humans.add(archerHuman);
-        humans.add(warriorHuman);
-        humans.add(warriorHuman);
-        humans.add(warriorHuman);
-        humans.add(warriorHuman);
-
-        List<Character> orcs = new ArrayList<>();
-        orcs.add(shamanOrc);
-        orcs.add(archerOrc);
-        orcs.add(archerOrc);
-        orcs.add(archerOrc);
-        orcs.add(goblinOrc);
-        orcs.add(goblinOrc);
-        orcs.add(goblinOrc);
-        orcs.add(goblinOrc);
-
-        List<Character> undeads = new ArrayList<>();
-        undeads.add(necromancerUndead);
-        undeads.add(hunterUndead);
-        undeads.add(hunterUndead);
-        undeads.add(hunterUndead);
-        undeads.add(zombieUndead);
-        undeads.add(zombieUndead);
-        undeads.add(zombieUndead);
-        undeads.add(zombieUndead);
-
-        if (newRnd == 0) {
-            elfs.toArray();
         } else {
-            humans.toArray();
+            Character[] humans = {magHuman, archerHuman, archerHuman, archerHuman,warriorHuman,warriorHuman,warriorHuman,warriorHuman};
+        }
+
+        double newRndBad = generateRandom(1);
+
+        if (newRndBad == 0) {
+
+            Character[] orcs = {shamanOrc, archerOrc, archerOrc, archerOrc,goblinOrc,goblinOrc,goblinOrc,goblinOrc};
+
+        } else {
+
+            Character[] undeads = {necromancerUndead, hunterUndead, hunterUndead, hunterUndead,zombieUndead,zombieUndead,zombieUndead,zombieUndead};
+
         }
 
     }
 
 
 }
+
+//        Character[] elfs = {magElf, archerElf, archerElf, archerElf,warriorElf,warriorElf,warriorElf,warriorElf};
+//        Character[] humans = {magHuman, archerHuman, archerHuman, archerHuman,warriorHuman,warriorHuman,warriorHuman,warriorHuman};
+//        Character[] orcs = {shamanOrc, archerOrc, archerOrc, archerOrc,goblinOrc,goblinOrc,goblinOrc,goblinOrc};
+//        Character[] undeads = {necromancerUndead, hunterUndead, hunterUndead, hunterUndead,zombieUndead,zombieUndead,zombieUndead,zombieUndead};
+
+//           Пример создания списка, если захочу вернуться к спискам.
+//            List<Character> undeads = new ArrayList<>();
+//            undeads.add(necromancerUndead);
+//            undeads.add(hunterUndead);
+//            undeads.add(hunterUndead);
+//            undeads.add(hunterUndead);
+//            undeads.add(zombieUndead);
+//            undeads.add(zombieUndead);
+//            undeads.add(zombieUndead);
+//            undeads.add(zombieUndead);
