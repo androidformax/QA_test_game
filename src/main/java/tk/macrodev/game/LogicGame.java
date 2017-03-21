@@ -62,6 +62,11 @@ public class LogicGame {
         /**
         * Отряды
         */
+//        Character[] elfs = {magElf, archerElf, archerElf, archerElf,warriorElf,warriorElf,warriorElf,warriorElf};
+//        Character[] humans = {magHuman, archerHuman, archerHuman, archerHuman,warriorHuman,warriorHuman,warriorHuman,warriorHuman};
+//        Character[] orcs = {shamanOrc, archerOrc, archerOrc, archerOrc,goblinOrc,goblinOrc,goblinOrc,goblinOrc};
+//        Character[] undeads = {necromancerUndead, hunterUndead, hunterUndead, hunterUndead,zombieUndead,zombieUndead,zombieUndead,zombieUndead};
+
         List<Character> elfs = new ArrayList<>();
         elfs.add(magElf);
         elfs.add(archerElf);
@@ -73,34 +78,34 @@ public class LogicGame {
         elfs.add(warriorElf);
 
         List<Character> humans = new ArrayList<>();
-        elfs.add(magHuman);
-        elfs.add(archerHuman);
-        elfs.add(archerHuman);
-        elfs.add(archerHuman);
-        elfs.add(warriorHuman);
-        elfs.add(warriorHuman);
-        elfs.add(warriorHuman);
-        elfs.add(warriorHuman);
+        humans.add(magHuman);
+        humans.add(archerHuman);
+        humans.add(archerHuman);
+        humans.add(archerHuman);
+        humans.add(warriorHuman);
+        humans.add(warriorHuman);
+        humans.add(warriorHuman);
+        humans.add(warriorHuman);
 
         List<Character> orcs = new ArrayList<>();
-        elfs.add(shamanOrc);
-        elfs.add(archerOrc);
-        elfs.add(archerOrc);
-        elfs.add(archerOrc);
-        elfs.add(goblinOrc);
-        elfs.add(goblinOrc);
-        elfs.add(goblinOrc);
-        elfs.add(goblinOrc);
+        orcs.add(shamanOrc);
+        orcs.add(archerOrc);
+        orcs.add(archerOrc);
+        orcs.add(archerOrc);
+        orcs.add(goblinOrc);
+        orcs.add(goblinOrc);
+        orcs.add(goblinOrc);
+        orcs.add(goblinOrc);
 
         List<Character> undeads = new ArrayList<>();
-        elfs.add(necromancerUndead);
-        elfs.add(hunterUndead);
-        elfs.add(hunterUndead);
-        elfs.add(hunterUndead);
-        elfs.add(zombieUndead);
-        elfs.add(zombieUndead);
-        elfs.add(zombieUndead);
-        elfs.add(zombieUndead);
+        undeads.add(necromancerUndead);
+        undeads.add(hunterUndead);
+        undeads.add(hunterUndead);
+        undeads.add(hunterUndead);
+        undeads.add(zombieUndead);
+        undeads.add(zombieUndead);
+        undeads.add(zombieUndead);
+        undeads.add(zombieUndead);
 
     }
 
@@ -124,9 +129,7 @@ public class LogicGame {
     public static void main(String[] args) {
 
         double newRnd = generateRandom(1);
-
-
-
+        
 
         if (newRnd == 0) {
 
