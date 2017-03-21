@@ -5,13 +5,17 @@ import tk.macrodev.game.actions.AttackAction;
 import tk.macrodev.game.actions.DowngradeAction;
 import tk.macrodev.game.actions.UpgradeAction;
 
+import java.util.Random;
+
+import static tk.macrodev.game.actions.GenerateRandom.generateRandom;
+
 /**
  * Created by androidformax on 20.03.2017.
  */
 public class LogicGame {
     public void run() {
         Character magElf = new Character(Character.Type.GENERAL, 100);
-        magElf.load(new AttackAction(10,Action.Type.MAGIC_ATTACK));
+        magElf.load(new AttackAction(10, Action.Type.MAGIC_ATTACK));
         magElf.load(new UpgradeAction(Action.Type.UPGRADE));
 
         Character archerElf = new Character(Character.Type.GENERAL, 100);
@@ -22,7 +26,7 @@ public class LogicGame {
         warriorElf.load(new AttackAction(15, Action.Type.ATTACK));
 
         Character magHuman = new Character(Character.Type.GENERAL, 100);
-        magHuman.load(new AttackAction(4,Action.Type.MAGIC_ATTACK));
+        magHuman.load(new AttackAction(4, Action.Type.MAGIC_ATTACK));
         magHuman.load(new UpgradeAction(Action.Type.UPGRADE));
 
         Character archerHuman = new Character(Character.Type.GENERAL, 100);
@@ -55,4 +59,35 @@ public class LogicGame {
         warriorHuman.load(new AttackAction(20, Action.Type.ATTACK));
 
     }
+
+
+    /**
+     * Метод для генерации случайного числа 0 или 1 для определений выбора команд и ударов.
+     *
+     */
+    public class GenerateRandom {
+        public Random random = new Random();
+
+        public double generateRandom(int i) {
+            return Math.abs(random.nextInt()) % i;
+        }
+    }
+
+    /**
+     * Точка входа
+     *
+     */
+    public static void main(String[] args) {
+
+        double newRnd = generateRandom(1);
+
+        if (newRnd == 0) {
+
+        } else {
+
+        }
+
+    }
+
+
 }
