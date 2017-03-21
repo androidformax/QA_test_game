@@ -15,7 +15,26 @@ import static tk.macrodev.game.actions.GenerateRandom.generateRandom;
  * Created by androidformax on 20.03.2017.
  */
 public class LogicGame {
-    public void run() {
+    /**
+     * Метод для генерации случайного числа 0 или 1 для определений выбора команд и ударов.
+     *
+     */
+    public class GenerateRandom {
+        public Random random = new Random();
+
+        public double generateRandom(int i) {
+            return Math.abs(random.nextInt()) % i;
+        }
+    }
+
+    /**
+     * Точка входа
+     *
+     */
+    public static void main(String[] args) {
+
+        double newRnd = generateRandom(1);
+
         Character magElf = new Character(Character.Type.GENERAL, 100);
         magElf.load(new AttackAction(10, Action.Type.MAGIC_ATTACK));
         magElf.load(new UpgradeAction(Action.Type.UPGRADE));
@@ -60,8 +79,8 @@ public class LogicGame {
         Character zombieUndead = new Character(Character.Type.GENERAL, 100);
         warriorHuman.load(new AttackAction(20, Action.Type.ATTACK));
         /**
-        * Отряды
-        */
+         * Отряды
+         */
 //        Character[] elfs = {magElf, archerElf, archerElf, archerElf,warriorElf,warriorElf,warriorElf,warriorElf};
 //        Character[] humans = {magHuman, archerHuman, archerHuman, archerHuman,warriorHuman,warriorHuman,warriorHuman,warriorHuman};
 //        Character[] orcs = {shamanOrc, archerOrc, archerOrc, archerOrc,goblinOrc,goblinOrc,goblinOrc,goblinOrc};
@@ -107,34 +126,10 @@ public class LogicGame {
         undeads.add(zombieUndead);
         undeads.add(zombieUndead);
 
-    }
-
-
-    /**
-     * Метод для генерации случайного числа 0 или 1 для определений выбора команд и ударов.
-     *
-     */
-    public class GenerateRandom {
-        public Random random = new Random();
-
-        public double generateRandom(int i) {
-            return Math.abs(random.nextInt()) % i;
-        }
-    }
-
-    /**
-     * Точка входа
-     *
-     */
-    public static void main(String[] args) {
-
-        double newRnd = generateRandom(1);
-        
-
         if (newRnd == 0) {
-
+            elfs.toArray();
         } else {
-
+            humans.toArray();
         }
 
     }
