@@ -5,6 +5,8 @@ import tk.macrodev.game.actions.AttackAction;
 import tk.macrodev.game.actions.DowngradeAction;
 import tk.macrodev.game.actions.UpgradeAction;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 import static tk.macrodev.game.actions.GenerateRandom.generateRandom;
@@ -57,6 +59,48 @@ public class LogicGame {
 
         Character zombieUndead = new Character(Character.Type.GENERAL, 100);
         warriorHuman.load(new AttackAction(20, Action.Type.ATTACK));
+        /**
+        * Отряды
+        */
+        List<Character> elfs = new ArrayList<>();
+        elfs.add(magElf);
+        elfs.add(archerElf);
+        elfs.add(archerElf);
+        elfs.add(archerElf);
+        elfs.add(warriorElf);
+        elfs.add(warriorElf);
+        elfs.add(warriorElf);
+        elfs.add(warriorElf);
+
+        List<Character> humans = new ArrayList<>();
+        elfs.add(magHuman);
+        elfs.add(archerHuman);
+        elfs.add(archerHuman);
+        elfs.add(archerHuman);
+        elfs.add(warriorHuman);
+        elfs.add(warriorHuman);
+        elfs.add(warriorHuman);
+        elfs.add(warriorHuman);
+
+        List<Character> orcs = new ArrayList<>();
+        elfs.add(shamanOrc);
+        elfs.add(archerOrc);
+        elfs.add(archerOrc);
+        elfs.add(archerOrc);
+        elfs.add(goblinOrc);
+        elfs.add(goblinOrc);
+        elfs.add(goblinOrc);
+        elfs.add(goblinOrc);
+
+        List<Character> undeads = new ArrayList<>();
+        elfs.add(necromancerUndead);
+        elfs.add(hunterUndead);
+        elfs.add(hunterUndead);
+        elfs.add(hunterUndead);
+        elfs.add(zombieUndead);
+        elfs.add(zombieUndead);
+        elfs.add(zombieUndead);
+        elfs.add(zombieUndead);
 
     }
 
@@ -80,6 +124,9 @@ public class LogicGame {
     public static void main(String[] args) {
 
         double newRnd = generateRandom(1);
+
+
+
 
         if (newRnd == 0) {
 
