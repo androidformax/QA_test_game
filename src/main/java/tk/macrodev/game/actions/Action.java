@@ -13,7 +13,7 @@ public interface Action {
     void execute(Character who, Character to);
 
     enum Type {
-        ATTACK, UPGRADE, DOWNGRADE, MAGIC_ATTACK, BOW_ATTACK; //Виды аттак
+        ATTACK, UPGRADE, DOWNGRADE, MAGIC_ATTACK, BOW_ATTACK //Виды аттак
     }
 
 

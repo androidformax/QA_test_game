@@ -13,6 +13,10 @@ public class AttackAction implements Action {
         this.type = type;
     }
 
+    public AttackAction() {
+
+    }
+
     @Override
     public Action.Type getType() {
         return this.type;
