@@ -23,9 +23,9 @@ public class LogicGame {
     final Random rm = new Random();
 
     public void run() {
+
         int command1 = rm.nextInt(1);
 
-        if (command1 == 0) {
             List<Character> elfs = new ArrayList<>();
             elfs.add(this.createElf(RaceElf.MAG));
             elfs.add(this.createElf(RaceElf.ARCHER));
@@ -35,7 +35,8 @@ public class LogicGame {
             elfs.add(this.createElf(RaceElf.WARRIOR));
             elfs.add(this.createElf(RaceElf.WARRIOR));
             elfs.add(this.createElf(RaceElf.WARRIOR));
-        } else {
+
+
             List<Character> humans = new ArrayList<>();
             humans.add(this.createHuman(MAG));
             humans.add(this.createHuman(ARCHER));
@@ -45,10 +46,7 @@ public class LogicGame {
             humans.add(this.createHuman(WARRIOR));
             humans.add(this.createHuman(WARRIOR));
             humans.add(this.createHuman(WARRIOR));
-        }
 
-        int command2 = rm.nextInt(1);
-        if (command2 == 0) {
             List<Character> orcs = new ArrayList<>();
             orcs.add(this.createOrk(SHAMAN));
             orcs.add(this.createOrk(RaceOrk.ARCHER));
@@ -58,7 +56,8 @@ public class LogicGame {
             orcs.add(this.createOrk(RaceOrk.GOBLIN));
             orcs.add(this.createOrk(RaceOrk.GOBLIN));
             orcs.add(this.createOrk(RaceOrk.GOBLIN));
-        } else {
+
+
             List<Character> undeads = new ArrayList<>();
             undeads.add(this.createUndead(RaceUndead.NECROMANCER));
             undeads.add(this.createUndead(RaceUndead.HUNTER));
@@ -68,13 +67,27 @@ public class LogicGame {
             undeads.add(this.createUndead(RaceUndead.ZOMBIE));
             undeads.add(this.createUndead(RaceUndead.ZOMBIE));
             undeads.add(this.createUndead(RaceUndead.ZOMBIE));
+
+        List<Character> komanda1;
+        List<Character> komanda2;
+
+        if (command1 == 0) {
+            komanda1 = elfs;
+        } else {
+            komanda1 = humans;
+        }
+        int command2 = rm.nextInt(1);
+        if (command2 == 0) {
+            komanda2 = orcs;
+        }else{
+           komanda2 = undeads;
         }
 
+        // реализация боя, через if с рендомом?
+            //fight
 
-        //fight
-
-        Character who = humans.get(rm.nextInt(humans.size()));
-        Character to = orks.get(rm.nextInt(humans.size()));
+        Character who = komanda1.get(rm.nextInt(komanda1.size()));
+        Character to = komanda2.get(rm.nextInt(komanda2.size()));
         who.action(
                 Action.Type.values()[Action.Type.values().length],
                 to
