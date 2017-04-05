@@ -41,6 +41,7 @@ public class ActionAttack implements Attack {
         else
             sb.append(to.getRace()).append( " is still alive.");
 
+
         System.out.println(sb.toString());
 
     }

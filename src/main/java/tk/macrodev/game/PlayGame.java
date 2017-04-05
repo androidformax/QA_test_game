@@ -60,6 +60,7 @@ public class PlayGame {
 
         }while (isCont);
 
+
         System.out.println("finished!");
     }
 
