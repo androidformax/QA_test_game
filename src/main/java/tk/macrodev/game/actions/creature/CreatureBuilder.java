@@ -11,9 +11,9 @@ import tk.macrodev.game.actions.race.*;
  */
 public class CreatureBuilder {
 
-    public Character buildElf(Race race){
+    public Elf buildElf(Race race){
 
-        Character elf = new Character();
+        Elf elf = new Elf();
         elf.setRace(race);
         elf.setHp(100);
         elf.setType(Type.GENERAL);
@@ -30,9 +30,9 @@ public class CreatureBuilder {
         return elf;
     }
 
-    public Character buildHuman(Race race){
+    public Human buildHuman(Race race){
 
-        Character human = new Character();
+        Human human = new Human();
         human.setRace(race);
         human.setHp(100);
         human.setType(Type.GENERAL);
@@ -49,9 +49,9 @@ public class CreatureBuilder {
         return human;
     }
 
-    public Character buildOrk(Race race){
+    public Ork buildOrk(Race race){
 
-        Character ork = new Character();
+        Ork ork = new Ork();
         ork.setRace(race);
         ork.setHp(100);
         ork.setType(Type.GENERAL);
@@ -69,9 +69,9 @@ public class CreatureBuilder {
     }
 
 
-    public Character buildUndead(Race race){
+    public Undead buildUndead(Race race){
 
-        Character undead = new Character();
+        Undead undead = new Undead();
         undead.setRace(race);
         undead.setHp(100);
         undead.setType(Type.GENERAL);

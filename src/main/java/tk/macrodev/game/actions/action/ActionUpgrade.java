@@ -25,7 +25,7 @@ public class ActionUpgrade implements Attack {
 
         StringBuilder sb = new StringBuilder();
         sb.append(who.getRace()).append(" [").append(who.getHp()).append("] ");
-        sb.append(" upgrade ").append(" ");
+        sb.append(" Inflicted a spell and upgrade of ").append(" ");
         sb.append(to.getRace()).append(" [").append(to.getHp()).append("] ");
 
         to.upgrade();

@@ -29,11 +29,16 @@ public class Character implements Creature {
         attacks = new ArrayList<Attack>();
     }
 
-    public void attack(Character to) {
+    public Attack getAttack() {
         int i = new Random().nextInt(this.attacks.size());
         Attack action = this.attacks.get(i);
 
-        action.execute(this, to);
+        return action;
+    }
+
+    public void executeAttack(Character to, Attack attack) {
+
+        attack.execute(this, to);
 
         if(this.getType() == Type.PRIVILEGE)
             this.downgrade();

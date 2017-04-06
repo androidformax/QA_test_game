@@ -25,7 +25,7 @@ public class ActionDowngrade implements Attack {
 
         StringBuilder sb = new StringBuilder();
         sb.append(who.getRace()).append(" [").append(who.getHp()).append("] ");
-        sb.append(" ухудшил характеристики ").append(" ");
+        sb.append(" Inflicted a spell and impaired performance of ").append(" ");
         sb.append(to.getRace()).append(" [").append(to.getHp()).append("] ");
 
 

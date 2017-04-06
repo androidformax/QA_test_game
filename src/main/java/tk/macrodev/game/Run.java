@@ -10,10 +10,10 @@ import java.io.IOException;
  */
 public class Run {
     public static void main(String [] args) throws IOException {
-        Loging loging = new Loging();
-        loging.log();
+
         PlayGame playGame = new PlayGame();
         playGame.load();
         playGame.run();
+
     }
 }

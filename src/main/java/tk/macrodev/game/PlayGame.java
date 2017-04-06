@@ -1,9 +1,9 @@
 package tk.macrodev.game;
 
+import tk.macrodev.game.actions.action.ActionUpgrade;
+import tk.macrodev.game.actions.action.Attack;
+import tk.macrodev.game.actions.creature.*;
 import tk.macrodev.game.actions.creature.Character;
-import tk.macrodev.game.actions.creature.CreatureBuilder;
-import tk.macrodev.game.actions.creature.CreatureType;
-import tk.macrodev.game.actions.creature.Type;
 import tk.macrodev.game.actions.generator.AttackerType;
 import tk.macrodev.game.actions.generator.RandomGenerator;
 import tk.macrodev.game.actions.race.ElfRace;
@@ -30,6 +30,13 @@ public class PlayGame {
 
         boolean isCont = true;
 
+        StringBuilder info = new StringBuilder();
+        info.append(l1.get(0).toString()).append( " fight against ")
+                .append(l2.get(0).toString());
+
+        System.out.println(info.toString());
+        Log.writeFile(info.toString());
+
         do {
             Character who;
             Character to;
@@ -38,13 +45,26 @@ public class PlayGame {
 
             if (attackerType == AttackerType.GROUP1) {
                 who = getCharacter(l1);
-                to = getCharacter(l2);
             } else {
                 who = getCharacter(l2);
-                to = getCharacter(l1);
             }
 
-            who.attack(to);
+            Attack attack = who.getAttack();
+            if(attack instanceof ActionUpgrade){
+                if (attackerType == AttackerType.GROUP1) {
+                    to = getCharacter(l1);
+                } else {
+                    to = getCharacter(l2);
+                }
+            }else{
+                if (attackerType == AttackerType.GROUP1) {
+                    to = getCharacter(l2);
+                } else {
+                    to = getCharacter(l1);
+                }
+            }
+
+            who.executeAttack(to, attack);
 
             if(to.getHp() < 0){
                 if (attackerType == AttackerType.GROUP1) {
@@ -54,12 +74,19 @@ public class PlayGame {
                 }
             }
 
-            if(l1.size()==0 || l2.size()==0)
+            if(l1.size()==0){
+                Character winner = l2.get(0);
+                System.out.println( winner.toString() + " race win!");
                 isCont = false;
+            }
 
+            if(l2.size()==0){
+                Character winner = l1.get(0);
+                System.out.println( winner.toString() + " race win!");
+                isCont = false;
+            }
 
         }while (isCont);
-
 
         System.out.println("finished!");
     }
