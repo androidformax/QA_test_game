@@ -2,8 +2,10 @@ package tk.macrodev.game;
 
 import tk.macrodev.game.actions.action.ActionUpgrade;
 import tk.macrodev.game.actions.action.Attack;
-import tk.macrodev.game.actions.creature.*;
 import tk.macrodev.game.actions.creature.Character;
+import tk.macrodev.game.actions.creature.CreatureBuilder;
+import tk.macrodev.game.actions.creature.CreatureType;
+import tk.macrodev.game.actions.creature.Type;
 import tk.macrodev.game.actions.generator.AttackerType;
 import tk.macrodev.game.actions.generator.RandomGenerator;
 import tk.macrodev.game.actions.race.ElfRace;
@@ -13,6 +15,8 @@ import tk.macrodev.game.actions.race.UndeadRace;
 
 import java.util.ArrayList;
 
+import static tk.macrodev.game.Log.LOG;
+
 /**
  * Created by androidformax
  *
@@ -20,6 +24,7 @@ import java.util.ArrayList;
  * @since: 03.04.2017
  */
 public class PlayGame {
+
 
     ArrayList<Character> l1 = new ArrayList<>();
     ArrayList<Character> l2 = new ArrayList<>();
@@ -35,7 +40,7 @@ public class PlayGame {
                 .append(l2.get(0).toString());
 
         System.out.println(info.toString());
-        Log.writeFile(info.toString());
+        LOG.info(info.toString());
 
         do {
             Character who;
@@ -77,12 +82,16 @@ public class PlayGame {
             if(l1.size()==0){
                 Character winner = l2.get(0);
                 System.out.println( winner.toString() + " race win!");
+                LOG.info(winner.toString() + " race win!");
                 isCont = false;
             }
 
             if(l2.size()==0){
                 Character winner = l1.get(0);
+
                 System.out.println( winner.toString() + " race win!");
+                LOG.info(winner.toString() + " race win!");
+
                 isCont = false;
             }
 

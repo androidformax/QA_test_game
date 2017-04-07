@@ -2,6 +2,8 @@ package tk.macrodev.game.actions.action;
 
 import tk.macrodev.game.actions.creature.Character;
 
+import static tk.macrodev.game.Log.LOG;
+
 /**
  * Created by androidformax
  *
@@ -43,7 +45,7 @@ public class ActionAttack implements Attack {
 
 
         System.out.println(sb.toString());
-
+        LOG.info(sb.toString());
     }
 
     public void upDamage() {

@@ -2,6 +2,8 @@ package tk.macrodev.game.actions.action;
 
 import tk.macrodev.game.actions.creature.Character;
 
+import static tk.macrodev.game.Log.LOG;
+
 /**
  * Created by androidformax
  *
@@ -32,6 +34,7 @@ public class ActionDowngrade implements Attack {
         to.downgrade();
 
         System.out.println(sb.toString());
+        LOG.info(sb.toString());
     }
 
     public AttackType getType() {
